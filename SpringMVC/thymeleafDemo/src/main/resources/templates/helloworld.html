@@ -17,7 +17,20 @@
 <body>
 
 <!-- theDate is attribute of theModel, Thymeleaf accesses it here -->
-    <p th:text="'Time on the server is ' + ${theDate}" class="funny"/>
+<!--    <p th:text="'Time on the server is ' + ${theDate}" class="funny"/>-->
+
+    Hello World of Spring!
+
+    <br><br>
+
+    <!-- studentName is name of HTML form field on helloworld.html-->
+    Student name: <span th:text="${param.studentName}" />
+
+    <br><br>
+
+    <!--  message is value from controller  -->
+    The message: <span th:text="${message}" />
+
 
 </body>
 

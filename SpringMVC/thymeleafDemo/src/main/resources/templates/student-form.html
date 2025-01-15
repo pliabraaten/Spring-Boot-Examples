@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Registration Form</title>
+</head>
+<body>
+    <h3>Student Registration Form</h3>
+
+<!-- When form is loaded, Spring will read student from the model, then call student.getFirstName() and student.getLastName() -->
+    <form th:action="@{processStudentForm}" th:object="${student}" method="POST">
+                                        <!-- student is name of model attribute-->
+
+        First name: <input type="text" th:field="*{firstName}" />
+                        <!-- *{firstName} is shortcut for ${student.firstName} -->
+
+        <br><br>
+
+        Last name: <input type="text" th:field="*{lastName}" />
+
+        <input type="submit" value="Submit" />
+
+<!-- When form is submitted, Spring will create a new Student instance and add to the model, then call setters on first and last name -->
+
+    </form>
+
+</body>
+</html>
